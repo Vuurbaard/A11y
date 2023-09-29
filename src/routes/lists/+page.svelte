@@ -2,6 +2,10 @@
 	let listItems = ['Item 1', 'Item 2', 'Item 3'];
 </script>
 
+<svelte:head>
+	<title>Lists</title>
+</svelte:head>
+
 <nav aria-label="Main navigation">
     <a href="/">⬅️ Go back</a>
 </nav>
