@@ -1,0 +1,41 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "A11y",
+	"service": "a11y",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.dev.yml"
+	],
+	"workspaceFolder": "/workspaces",
+	"remoteUser": "node",
+	"postCreateCommand": "npm install",
+	"shutdownAction": "stopCompose",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"configureZshAsDefaultShell": true
+		},
+		"ghcr.io/akhildevelops/devcontainer-features/apt:0": {
+			"packages": "python3-venv,python3-pip"
+		},
+		"ghcr.io/akhildevelops/devcontainer-features/pip:0": {
+			"packages": "thefuck"
+		},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+			"plugins": "npm thefuck aliases npm git zsh-autosuggestions",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+			"username": "node"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"ms-azuretools.vscode-docker",
+				"sburg.vscode-javascript-booster",
+				"xabikos.JavaScriptSnippets",
+				"GitHub.copilot",
+				"svelte.svelte-vscode"
+			]
+		}
+	}
+} 

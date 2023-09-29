@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  a11y:
+    container_name: dev_a11y
+    restart: "no"
+    environment:
+      - DEVCONTAINER=true
+
+    extends: 
+      file: docker-compose.yml
+      service: a11y
+
+    volumes:
+      - dev_a11y:/workspaces
+      - ~/.gitconfig:/root/.gitconfig
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+volumes:
+  dev_a11y:

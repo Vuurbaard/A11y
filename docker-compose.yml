@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  a11y:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: a11y
+    restart: "unless-stopped"
+    volumes:
+      - a11y:/usr/src/app
+
+volumes:
+  a11y:
